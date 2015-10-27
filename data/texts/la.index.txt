@@ -1,0 +1,6 @@
+data/texts/lucan.bellum_civile.xml
+data/texts/ovid.metamorphoses.xml
+data/texts/silius_italicus.punica.xml
+data/texts/statius.thebaid.xml
+data/texts/valerius_flaccus.argonautica.xml
+data/texts/vergil.aeneid.xml

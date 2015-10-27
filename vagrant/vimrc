@@ -1,0 +1,4 @@
+set nocompatible
+set bs=2
+set ts=3
+set number

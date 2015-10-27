@@ -1,0 +1,6 @@
+/vagrant/data/texts/lucan.bellum_civile.xml
+/vagrant/data/texts/ovid.metamorphoses.xml
+/vagrant/data/texts/silius_italicus.punica.xml
+/vagrant/data/texts/statius.thebaid.xml
+/vagrant/data/texts/valerius_flaccus.argonautica.xml
+/vagrant/data/texts/vergil.aeneid.xml

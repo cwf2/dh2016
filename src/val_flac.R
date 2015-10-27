@@ -10,7 +10,7 @@ library(mclust)
 library(XML)
 library(MASS)
 
-source(file.path("src","tesserae.R"))
+source("/vagrant/src/tesserae.R")
 
 # functions
 
@@ -61,7 +61,7 @@ load.corpus <- function(index.file) {
   rbindlist(lapply(files, load.file))
 }
 
-make.samples <- function() {
+make.samples <- function(sample.size = 50) {
   la.verse[,
     .(auth, work, loc, verse, int.grp = ceiling(unitid / sample.size))
   ][,
@@ -157,20 +157,27 @@ remapClassToRef <- function(class, ref) {
 # 0. preliminaries
 
 set.seed(19810111)
-sample.size <- 30
+sample.size <- 50
 stopwords.maxsamples <- 0.5
 ntopics <- 50
-ncores <- 3
+ncores <- 2
+plot.dir <- file.path("/vagrant/plot", paste(sample.size, ntopics, sep="-"))
+
+if(dir.exists(plot.dir)) {
+  unlink(plot.dir, recursive=T)
+}
+dir.create(plot.dir, recursive=T)
+
 
 # 1. preprocessing the texts
 
 # load latin corpus
-la.verse <- load.corpus("data/texts/la.index.txt")
+la.verse <- load.corpus("/vagrant/data/la.index.txt")
 
 # load latin stemmer
 la.stemmer <- build.stemmer.table(
-  stems.file = file.path("data", "tesserae", "la.lexicon.csv"),
-  resolve = file.path("data", "tesserae", "la.word.freq")
+  stems.file = "/vagrant/data/tesserae/la.lexicon.csv",
+  resolve = "/vagrant/data/tesserae/la.word.freq"
 )
 
 # 2. sampling
@@ -178,7 +185,7 @@ la.stemmer <- build.stemmer.table(
 # assign samples to verse lines
 cat("Sampling\n")
 
-samples <- make.samples()
+samples <- make.samples(sample.size)
 
 # 2. Generate feature vectors for samples
 #    a) tf-idf weights using tm
@@ -201,21 +208,22 @@ feat.tfidf <- as.matrix(dtm.tfidf)
 cat("Calculating PCA for tf-idf scores\n")
 pca.tfidf <- prcomp(feat.tfidf)
 
-# draw a graph showing author distribution
-pdf(file.path("plot", "pca.author.tfidf.pdf"), width = 6, height = 6)
-plot(pca.tfidf$x,
-  col = unclass(samples$auth),
-  pch = unclass(samples$auth),
-  main = "TF-IDF by author"
-)
-dev.off()
-
-pdf(file.path("plot", "pca.author.legend.pdf"), width = 4, height = 6)
+# all-purpose legend for authorship
+pdf(file.path(plot.dir, "pca.author.legend.pdf"), width = 4, height = 6)
 plot.new()
 legend("center",
   legend = levels(samples$auth),
   col = 1:nlevels(samples$auth),
   pch = 1:nlevels(samples$auth)
+)
+dev.off()
+
+# draw a graph showing author distribution
+pdf(file.path(plot.dir, "pca.author.tfidf.pdf"), width = 6, height = 6)
+plot(pca.tfidf$x,
+  col = unclass(samples$auth),
+  pch = unclass(samples$auth),
+  main = paste("TF-IDF:", sample.size, "ll/sample\n")
 )
 dev.off()
 
@@ -236,11 +244,11 @@ proj.pca.adjusted <- predict(pca.tfidf, feat.adjusted)
 pca.adjusted <- prcomp(feat.adjusted)
 
 # draw a graph showing author distribution
-pdf(file.path("plot", "pca.author.adjusted.pdf"), width = 6, height = 6)
+pdf(file.path(plot.dir, "pca.author.adjusted.pdf"), width = 6, height = 6)
 plot(pca.adjusted$x,
   col = unclass(samples$auth),
   pch = unclass(samples$auth),
-  main = "TF-IDF: author-adjusted\nby author"
+  main = paste("TF-IDF adj:", sample.size, "ll/sample")
 )
 dev.off()
 
@@ -260,11 +268,11 @@ feat.topics <- slot(lda, "gamma")
 pca.topics <- prcomp(feat.topics)
 
 # draw a graph showing author distribution
-pdf(file.path("plot", "pca.author.topics.pdf"), width = 6, height = 6)
+pdf(file.path(plot.dir, "pca.author.topics.pdf"), width = 6, height = 6)
 plot(pca.topics$x,
   col = unclass(samples$auth),
   pch = unclass(samples$auth),
-  main = "LDA 50 topics\nby author"
+  main = paste("LDA:", ntopics, "topics:", sample.size, "ll/sample")
 )
 dev.off()
 
@@ -290,7 +298,7 @@ auth_test.adjusted <- apply(auth_test.adjusted.cl, 2, adjustedRandIndex, y=sampl
 #
 
 k.max <- 15
-nreps <- 10
+nreps <- 15
 
 #  a) tfidf
 
@@ -317,9 +325,9 @@ names(randscores.tfidf.k.orig) <- 2:k.max
 
 randscores.tfidf.k.orig.nobs <- rep(choose(nreps, 2), k.max - 1)
 
-pdf(file.path("plot", "kmeans-authorship.tfidf.pdf"), height = 6, width = 6)
+pdf(file.path(plot.dir, "kmeans-authorship.tfidf.pdf"), height = 6, width = 6)
 boxplot(randscores.tfidf.k.orig, 
-  main = "TF-IDF: k-means stability\n",
+  main = paste("TF-IDF:", sample.size, "ll/sample\nk-means stability"),
   xlab = "number of classes",
   ylab = "Adjusted Rand index",
   cex.axis = 0.9
@@ -368,9 +376,9 @@ names(randscores.adjusted.k.orig) <- 2:k.max
 
 randscores.adjusted.k.orig.nobs <- rep(choose(nreps, 2), k.max - 1)
 
-pdf(file.path("plot", "kmeans-authorship.adjusted.pdf"), height = 6, width = 6)
+pdf(file.path(plot.dir, "kmeans-authorship.adjusted.pdf"), height = 6, width = 6)
 boxplot(randscores.adjusted.k.orig, 
-  main = "TF-IDF: author-adjusted\nk-means stability\n",
+  main = paste("TF-IDF adj:", sample.size, "ll/sample\nk-means stability"),
   xlab = "number of classes",
   ylab = "Adjusted Rand index",
   cex.axis = 0.9
@@ -418,9 +426,9 @@ names(randscores.topics.k.orig) <- 2:k.max
 
 randscores.topics.k.orig.nobs <- rep(choose(nreps, 2), k.max - 1)
 
-pdf(file.path("plot", "kmeans-authorship.topics.pdf"), height = 6, width = 6)
+pdf(file.path(plot.dir, "kmeans-authorship.topics.pdf"), height = 6, width = 6)
 boxplot(randscores.topics.k.orig, 
-  main = "LDA: 50 topics\nk-means stability\n",
+  main = paste("LDA:", ntopics, "topics\nk-means stability"),
   xlab = "number of classes",
   ylab = "Adjusted Rand index",
   cex.axis = 0.9
@@ -440,144 +448,21 @@ names(randscores.topics.k.effective) <- sort(unique(kmcl.topics.k.effective))
 
 randscores.topics.k.effective.nobs <- sapply(table(kmcl.topics.k.effective), choose, k = 2)
 
+#######
 
+# topics test
 
-#
-# 5. Aeneid 7 graph
-#
+one.lda.per.kmeans <- function(ntopics, nclusters) {
 
-mask <- samples$auth == "vergil" & (
-  substr(samples$lstart, 1, 1) == "7" | substr(samples$lend, 1, 1) == "7")
-
-# create collated graphs
-
-# a. tfidf
-
-for (i in 21:30) {  
-  pdf(
-    file = file.path("plot", paste("aen7", "tfidf", i, "pdf", sep=".")),
-    width = 6,
-    height = 4
+  t0 <- Sys.time()
+  on.exit(
+    cat(
+      paste(" - [", ntopics, " topics; ", nclusters, " clusters]", sep=""),
+      "...",
+      difftime(Sys.time(), t0, units = "min"),
+      "minutes\n"
+    )
   )
   
-  plot(
-    kmcl.tfidf.cl[mask, i],
-    col = kmcl.tfidf.cl[mask, i],
-    pch = 15,
-    cex = 2,
-    main = paste("Vergil Aeneid 7\ntfidf [", i, "]", sep=""),
-    ylab = "class",
-    xlab = "first verse of sample",
-    xaxt = "n",
-    yaxt = "n",
-    ylim = c(1,4)
-  )
-  mtext(
-    text = samples[mask, lstart], 
-    at = seq(1:(length(which(mask)))),
-    side = 1,
-    line = 0.5,
-    cex = 0.8,
-    las = 2
-  )
-  dev.off()
-}
-
-
-# b. adjusted
-
-aen.remap <- read.table(
-  file = file.path("data", "benchmark", "aen7-30line-remap.txt"),
-  head = F,
-  sep = "\t"
-)
-
-for (i in 21:30) {  
-  pdf(
-    file = file.path("plot", paste("aen7", "adjusted", i, "pdf", sep=".")),
-    width = 6,
-    height = 4
-  )
-  
-  oldclass <- kmcl.adjusted.cl[mask, i]
-  newclass <- oldclass
-  
-  for (j in 1:4) {
-    newclass[oldclass==j] <- aen.remap[j, i-20]
-  }
-  
-  plot(
-    newclass,
-    col = newclass,
-    pch = 15,
-    cex = 2,
-    main = paste("Vergil Aeneid 7\ntfidf-adjusted [", i, "]", sep=""),
-    ylab = "class",
-    xlab = "first verse of sample",
-    xaxt = "n",
-    yaxt = "n",
-    ylim = c(1,4)
-  )
-  mtext(
-    text = samples[mask, lstart], 
-    at = seq(1:(length(which(mask)))),
-    side = 1,
-    line = 0.5,
-    cex = 0.8,
-    las = 2
-  )
-  dev.off()
-}
-
-# c. LDA
-
-for (i in 21:30) {  
-  pdf(
-    file = file.path("plot", paste("aen7", "topics", i, "pdf", sep=".")),
-    width = 6,
-    height = 4
-  )
-  
-  plot(
-    kmcl.topics.cl[mask, i],
-    col = kmcl.topics.cl[mask, i],
-    pch = 15,
-    cex = 2,
-    main = paste("Vergil Aeneid 7\nlda ", ntopics, " topics [", i, "]", sep=""),
-    ylab = "class",
-    xlab = "first verse of sample",
-    xaxt = "n",
-    yaxt = "n",
-    ylim = c(1,4)
-  )
-  mtext(
-    text = samples[mask, lstart], 
-    at = seq(1:(length(which(mask)))),
-    side = 1,
-    line = 0.5,
-    cex = 0.8,
-    las = 2
-  )
-  dev.off()
-}
-
-#
-# 6. Mynors' scenes
-#
-
-mynors <- load.scenes(
-  file = file.path("data", "benchmark", "scenes-aen7-3col.txt"),
-  author = "vergil"
-)
-mynors.tfidf <- as.matrix(DocumentTermMatrix(VCorpus(VectorSource(mynors$Text))))
-
-mynors.pca.tfidf <- predict(pca.tfidf, newdata = mynors.tfidf)
-
-
-cat ("Trying to remove author signal\n")
-feat.adjusted <- feat.tfidf
-for (name in levels(samples$auth)) {
-  cat(" -", name, "\n")
-  sig.auth <- colMeans(feat.tfidf[samples$auth == name,]) - sig.base
-  feat.adjusted[samples$auth == name,] <- t(t(feat.tfidf[samples$auth == name,]) - sig.auth)
+  kmeans(slot(LDA(dtm.tf, k = ntopics), "gamma"), nclusters)$cluster
 }

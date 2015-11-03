@@ -1,0 +1,296 @@
+Loc	Description	Type
+1,1-21	Prologue; homage to the Flavian dynasty	
+(1,5-7)	Invocation to Phébus	Invocation
+1,22-78	Origins of the expedition	
+1,79-90	Jason calls upon Juno and Pallas	Invocation
+1,91-99	Intervention of Pallas and Juno	Divine intervention
+1,99-111	Hercule arrives with Hylas	
+1,111-120	Speech of Juno	Divine intervention ?
+1,121-126	Construction of the Argo (with Pallas' help)	Divine intervention
+1,127-148	Decoration of the Argo (ekphrasis)	
+1,149-183	Lamentations of Jason and dialogue with Acaste (son of Pelias)	
+(1,156-162)	Answer of Jupiter with an omen	Divine intervention
+1,184-187	Launch of the ship	Departure
+1,187-206	Religious ceremonies and prophecies	Ritual::Sacrifice
+1,207-254	Prophecies of Mopsus and Idmon	Prophecy
+(1,253-254)	Ritual feast	Ritual::Feast
+1,255-273	Farewell between Peleus and Achilles	Departure
+1,274-293	Orpheus' song (Phrixus and Helle)	
+1,294-299	Jason can't sleep	
+1,300-310	Athena appears to Jason	Divine intervention ?
+1,310-314	Preparations on the ship for leaving	Departure
+1,315-349	Farewell: speeches of Alcimede and Aeson	Departure
+1,350-486	Catalogue of the Argonauts	Catalogue
+1,487-497	Jason casts off	Departure
+1,498-567	Gods' conversation	Gods' conversation
+1,568-573	Jupiter thunders	Divine intervention ?
+1,574-642	Storm (Boreas' fury)	Storm
+(1,626-633)	Argonauts' lamentations	
+1,643-658	Neptun's intervention	
+1,659-692	Ceremony of thanks (libation)	Ritual
+1,693-729	Fury of Pelias and his speech	
+1,730-817	Jason's parents pour offering	Ritual
+(1,739-751)	Chrétée appears to Jason's parents	
+(1,752-773)	Dialogue between Aeson and Alcimede	
+1,818-850	Death of Jason's parents	Death
+2,1-81	Shipping to Lemnos	Navigation
+(2,47-65)	Speech of Typhis	
+2,82-310	Excursus: Lemnos Women's crime	
+(2,115-215)	Venus sends Fama to Lemnos (and goes herself)	
+(2,216-241)	The Lemnian women murder the men	
+(2,242-310)	Piety of Hypsipyle	
+2,311-312	The Argonauts arrive at Lemnos	Arrival
+2,313-356	Hospitaliy	Hospitality
+(2,316-325)	Speech of the seer Polyxo	Hospitality
+(2,326-356)	Sacrifice and feast	Hospitality::Ritual::Sacrifice::Feast
+2,357-369	Riot of the elements	Storm::Divine intervention
+2,369-373	The Argonuats stay in Lemnos	
+2,373-389	Rebukes of Hercules	
+2,390-392	The Argonauts decide to leave	Departure
+2,393-430	Farewell and departure	Departure
+(2,400-427)	Speech and gifts of Hypsipyle to Jason	Departure::Lamentations of an 'abandoned' woman
+2,431-444	Shipping to Troy	Navigation
+(2,432-440)	Stop in Samothrace and Hospitality of the priest Thyotes	Navigation::Hospitality::Halt
+2,445-450	Calling in at Troy	Arrival
+2,451-578	Hercules kills the sea-monster and releases Hesione	Trial
+(2,468-492)	Dialogue between Hercules and Hesione	
+(2,555-578)	Dialogue between Laomedon adn Hesione	
+2,579-583	Departure	Departure
+2,584-636	Navigation	Navigation
+(2,587-609)	Helles appears and speaks to Jason	Navigation::Prophecy
+(2,610-612)	Jason answers and pour wine offering	Navigation::Ritual::Sacrifice
+2,636-664	Arrival and hospitality of king Cyzicus	Hospitality
+(2,639-648)	Speech of Cyzicus	Hospitality
+(2,649-654)	Sacrifice ans feast	Hospitality::Ritual::Sacrifice::Feast
+(2,655-662)	Dialogue between Cyzicus and Jason	Hospitality
+3,1-13	Farewell and departure	Departure::Hospitality?
+3,14-18	Invocation to the Musa	Invocation
+3,19-31	Ethyology of the unaware going back of the Argonauts	
+3,32-42	Navigation: Tiphys falls aspleep	Navigation
+3,43-44	The ship approachs the shore	Arrival
+3,45-73	Intervention of Pan and Bellona	Divine intervention
+3,74-95	Preparing for the battle	Battle
+(3,80-82)	Speech of Jason	
+3,95-248	Battle between the Argonauts and the Dolions	Battle::Catalogue
+(3,212-219)	Invocation to the Muses	Invocation
+(3,229-234)	Speech of Cyzicus	
+3,249-256	Intervention of Jupiter	Divine intervention
+3,257-331	The fighters realize their mistake/confusion	
+(3,259-261)	Speech of Typhis	
+(3,270-272)	Speech of Jason	
+(3,290-313)	Speech of Jason	
+(3,316-329)	Speech of Clite on the death of her husband Cyzicus	
+3,332-371	Mourning and burials	Ritual::Burial
+3,372-416	Dialogue between Jason and Mopsus	Prophecy ?
+3,416-458	Ritual of purification	Ritual::Sacrifice
+(3,448-455)	Speech of Mopsos	
+3,459-480	The navigation resumes; Hercules breaks his ream	Navigation
+3,481-486	Stop in Mysia	Navigation::Halt
+3,487-565	Juno plots against Hercules	Divine intervention
+(3,492-505)	Speech of Juno to Pallas; Pallas goes to Mysia	Divine intervention::Gods' conversation?
+(3,506-520)	Speech of Juno	
+(3,535-543)	Speech of Juno to Dryopé	
+(3,545-565)	Hylas rape	
+3,566-597	Despair and fury of Hercules searching for Hylas	
+3,598-610	Despair of the Argonauts waiting for Hercules	
+3,611-714	Deliberation of the Argonauts about departure without Hylas/Hercules	
+(3,616-627)	Speech of Hercules	
+(3,649-689)	Speech of Meleager	
+(3,697-714)	Speech of Telamon	
+3,715-723	Departure ; sadness of the Argonauts	Departure
+3,724-732	Navigation	Navigation
+3,733-740	Despair of Hercules searching for Hylas	
+4,1-21	Jupiter's intervention	Divine intervention
+(4,4-14)	Jupiter's rebukes to Juno	
+4,22-57	The shadow of Hylas appears to Hercules	
+(4,25-37)	Speech of Hylas	
+(4,51-53)	Speech of Hercules	
+4,58-81	Meeting of Latona, Diana, Apollo and Jupiter	Gods' conversation
+(4,62-67)	Speech of Apollo to Jupiter, asking the delivery of Prometheus	
+(4,78-81)	Speech of Jupiter to Iris; Iris forwards to Hercules the instructions of Jupiter	
+4,82-98	Navigation	Navigation
+4,99-113	The land of the Bebryces and their king Amycos: description	
+4,114-132	Speech of Neptunus (laments)	
+4,133-176	Arrival and dialogue between a young man (Dymas) and Echion	Arrival::Hospitality
+4,177-186	The cave of Amycus: description	
+4,187-198	The Argonauts wait for Amycus	
+(4,191-192)	Speech of Pollux	
+4,199-205	Amycus' arrival	
+4,206-221	Speech of Amycus	
+4,222-238	Reaction of the Argonauts	
+4,239-248	Amycus and Pollux face-to-face	
+(4,239-243)	Speech of Amycus	
+4,248-324	Boxing match between Amycos and Pollux	Boxing match
+(4,250-251)	Speech of Amycus	
+(4,307-310)	Death of Amycus	Death
+(4,312-314)	Speech of Pollux	
+4,325-336	Jubilation of the Argonauts	
+(4,327-329)	Speech of the Argonauts	
+(4,335-336)	Speech of Castor	
+4,337-343	Purification, sacrifice and feast	Ritual::Sacrifice::Feast
+4,344-345	The navigation resumes	Departure
+4,346-421	Orpheus' song: Io and Bosphorus	
+(4,360-364)	Speech of Juno to Jupiter (within the Orpheus' song)	
+(4,387)	Words of Mercurius (within the Orpheus' song)	
+4,422-426	Navigation	Navigation
+4,427-635	Meeting with Phineus	
+(4,436-484)	Dialogue between Phineus and Zétès	
+(4,491-526)	Arrival and defeat of the Harpies	
+(4,519-526)	Speech of Typhon	
+(4,529-530)	Sacrifice and feast	Ritual::Sacrifice::Feast
+(4,538-546)	Jason speaks to Phineus	
+(4,547-625)	Phineus' prophecy	Prophecy
+(4,581-584)	Words of a divine voice (within the prophecy of Phineus)	
+(4,629-635)	Phineus thanks the Argonauts (speech)	
+4,636	Departure	Departure
+4,637-732	Navigation: fear of the Argonauts	Navigation
+(4,649-653)	Speech of Jason	
+(4,667-671)	Intervention of Pallas	Divine intervention
+(4,674-675)	Words of Jason	
+(4,681-685	Intervention of Pallas and Juno to separe the Symplegades' rocks	
+(4,704-707)	Speech of Jason	
+4,733	Calling in at the land of the Mariandyni and of the king Lycos	Arrival
+4,734-762	Echion goes off to reconnoitre and Lycus approach	Hospitality::Embassy
+(4,741-758)	Dialogue between Lycus and Jason	
+(4,760-762)	Feast and sacrifice	Feast::Sacrifice
+5,1-62	Idmon and Tiphys' death	Death
+(5,6-12)	Burial and pyra for Idmon	Death::Ritual::Burial
+(5,13-34)	Tiphys' death	
+(5,17-20)	The Argonauts pray Apollo	
+(5,28-31)	Burial and pyra for Tiphys	Death::Ritual::Burial
+(5,35-59)	Jason' speech (laments)	
+(5,60-62)	Building a moud	Death::Ritual::Burial
+5,63-71	Choice of a new helmsman	
+5,71-72	Departure	Departure
+5,73-176	Navigation	Navigation
+(5,89-95)	Sthenelos appears	
+(5,108-119)	Three new companions from Sinope join the Argonauts	
+(5,120-153)	Navigation: Halys, Thermodon, Chalybes, Tibarenes, Mossyneques	
+(5,129-139)	Jason asks to the new companions to tell their battles with the Amazones	
+(5,154-170)	The Caucasus: Prometheus is released by Hercules	
+5,177-216	Arrival at the mouth of the river Phasis	Arrival
+(5,192-213)	Wine libation and prayers	Ritual::Sacrifice
+(5,194-209)	Jason prays Phrixus, Helle, the woods, the shores and the Phasis	
+(5,210-212)	Happy omen	Divine intervention
+5,217- 221	Invocation to the Muse	Invocation
+5,222-277	Aietes and the Golden Fleece : analepsis and aetiology of the 'civil war'	
+(5,231-243)	The dead Phrixos appears to Aietes and speaks to him	Prophecy
+(5,246-252)	Aietes' prayer to his father and to Mars	
+(5,253-255)	Mars sends a dragon to protect the fleece	Divine intervention
+(5,259-262)	Divine warnings	Divine intervention
+(5,263-276)	First confrontations between Aietes and his brother Perses	Battle ?
+5,278-296	Consultation between Juno and Pallas	Gods' conversation
+5,297-328	Action plan of the Argonauts	
+(5,312-324)	Speech of Jason	
+(5,325-328)	Preparation of an ambassy	Embassy
+5,329-340	Night of Medea ; dream	
+5,341-398	First meeting of Medea and Jason	Man meets woman
+(5,351-362)	Dialogue between the nurse Henioche and Medea	
+(5,363-372)	Juno beautifies Jason	Divine intervention
+(5,378-396)	Dialogue between Jason and Medea	
+5,399-406	Jason's arrival at the palace of Aietes	
+(5,403-406)	Speech of the girl who leads les Argonauts to Aietes	
+5,407-454	The palace; The doors of the temple of the Sun : ekphrasis	
+5,455-546	Embassy to Aietes; the Argonauts have to become their allies against Perses	Embassy::Hospitality
+(5,470-546)	Dialogue between Jason and Aietes	
+5,546-557	Castor informe the Argonauts of the results of the ambassy (dialogue)	
+5,558-566	The Argonautsare getting ready to fight	
+5,566-617	At the palace; feast and stories	Feast::Hospitality
+(5,577-614)	Dialogue between Jason and Aietes : catalogue of warriors	Catalogue
+(5,615-617)	Sacrifice	Sacrifice
+5,618-695	Discussion between Mars, Pallas and Jupiter during a feast	Gods' conversation::Feast
+(5,680-689)	Prophecy of Jupiter	Prophecy
+6,1-32	Mars' intervention	Divine intervention
+(6,9-13)	Fama	
+(6,14-26)	Embassy of Perses to the Argonauts	Embassy
+(6,29)	Mars' cry	
+6,33-41	Invocation to the Muse	Invocation
+6,42-170	Catalogue of the allies of Perses	Catalogue
+6,171-181	Beginning of the battle	Battle
+(6,173-181)	Presence of Pallas and Mars (with mala leti Gaudia, Tisihpone and Fuga)	Divine intervention
+6,182-426	The Colchians and the Argonauts fighting Perses and the Schytians	Battle::Catalogue::Todeskette::Aristeia
+(6,211-216)	Medores' invocation to the Gods	Invocation
+(6,267-269)	Anausis speak to Styrus	
+(6,274-276)	Last words of Anausis to Styrus	
+(6,282-291	Gesander encourages his troops and invokes the shadow of his father	
+(6,304-316)	Dialogue between Gesander and Aquites	
+(6,322-339)	Gesander speaks to Canthus	
+(6,372-374)	Gesander's words on fighting Euryale and other Amazones	
+(6,396-409)	Pallas' intervention	Divine intervention
+6,427-502	Juno asks to Venus her girdle and takes the form of Calchiope in order to affect Medea	Divine intervention
+(6,458-466)	Juno speaks to Venus	Gods' conversation
+(6,475-476)	Venus answers to Juno	Gods' conversation
+(6,482-487)	Juno/Chalciope speaks to Medea	
+(6,495-502)	Hecates' laments	
+6,503-760	New fights under the eyes of Medea	Battle
+(6,515-516)	Invocation to the Muse	Invocation
+(6,517-574)	Catalogue of the warriors (teichoscopie)	Catalogue::Todeskette
+(6,535-539)	Aron's words	
+(6,547-549)	Jason's words	
+(6,575-620)	Medea notices the courage of Jason	
+(6,587-599)	Dialogue between Medea and Juno/Chalciope	
+(6,600-612)	Juno excites Medea and strengthens Jason	Divine intervention
+(6,621-656)	Death of Colaxès, the son of Jupiter	
+(6,624-629	Jupiter's laments on his son's fate	
+(6,629-630)	Jupiter makes his son braver	Divine intervention
+(6,646-648)	Colaxes' words	
+(6,657-760)	Medea is charmed by the courage of Jason (teichoscopie)	
+(6,675-679)	Medea speaks to her sister	
+(6,690-724)	Death of Myracès	
+(6,725-739)	Despair and lamentations of Perses who has been defeated	
+(6,740-751)	Pallas' words and intervention	Divine intervention
+7,1-25	Medea suffering and spending the night awake	
+(7,9-20)	Laments of Medea (speech)	
+7,26-102	The Argonauts go to Aietes. New conditions from Aietes in order to test Jason	Hospitality
+(7,29)	Offering to the gods	Sacrifice
+(7,35-77)	Speech of Aietes	
+(7,89-100)	Answer of Jason	
+7,103-152	Medea suffering	
+(7,127-140)	Medea talking to herself	
+7,153-192	Juno and Venus agree to convince Medea	Divine intervention
+(7,159-185)	Juno's speech and Venus' answer	Gods' conversation
+7,193-306	Venus shaped like Circe push Medea to help Jason	Divine intervention
+(7,198-209)	Speech of Medea to an absent Jason	
+(7,217-283)	Dialogue between Medea and Venus/Circe	
+(7,266-287)	Venus/Circe relates Jason's words	
+7,307-322	Last doubts of Medea	
+7,323-372	Plans in favour of Jason	
+(7,331-333)	Medea talking to herself	
+(7,338-349)	Medea talking to herself	
+7,373-394	Medea goes out of the town escorted by Venus/Circe	
+(7,385-387)	Medea speaks to Venus/Circe	
+7,394-538	Meeting between Jason and Medea	
+(7,413-455)	Dialogue between Jason and Medea	
+(7,456-466)	Medea gives the philter to Jason and pronounces the magic words	
+(7,467-472)	Advice of Medea to Jason	
+(7,477-510)	Dialogue between Medea and Jason	
+(7,516-538)	Dialogue between Medea and Jason	
+7,539-653	Jason prevailed over all his tasks	Trial
+(7,546-552)	Words of Aietes	
+8,1-23	Anxiety of Medea	
+(8,10-15)	Medea talks to hier absent father	
+8,24-53	Medea rejoins Jason	Man meets woman?
+(8,37-53)	Dialogue between Jason and Medea	
+8,54-133	Medea gets the dragon to sleep; the fleece is stolen; coming back to the ship	
+(8,58-66)	Dialogue between Jason and Medea	
+(8,70-78)	edea invokes the Sleep, then talks to the dragon	
+(8,95-108)	Medea talks to the dragon fallen asleep, then to Jason	
+(8,110-111)	Medea answers to Jason	
+(8,127-133)	Jason and Medea get into the ship	Departure
+8,134-174	Fury of Aietes and dispair of Colchian women	
+(8,139)	The ship goes on	Navigation
+(8,144-170)	Laments of Eidyia talking to Medea, then to Jason, then again to Medea	
+8,175-222	Navigation	Navigation
+(8,178-194)	Speech of Erginus (journey plan)	
+(8,197-199)	Jason answers to Erginus	
+(8,202-216)	Despair of Medea	
+8,223-258	Halt at Peuce; Wedding of Jason and Medea	Navigation::Halt
+(8,243-258)	Sacrifice during the wedding and feast	Sacrifice::Feast
+8,259-294	Colchians' arrival: Absyrtos talking to the absent Argonauts and Medea	
+8,295-317	Preparation for the battle	Battle
+8,318-384	Storm caused by Juno	Storm::Divine intervention
+(8,337-355)	Styrus' speech	
+8,385-407	The Argonauts try to persuade Jason to give Medea back to the Colchians	
+8,408-463	Indignation of Medea	
+(8,415-444)	Speech of Medea	
+8,464-467	Beginning of a reply of Jason	

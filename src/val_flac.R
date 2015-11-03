@@ -10,7 +10,7 @@ library(mclust)
 library(XML)
 library(MASS)
 
-source("/vagrant/src/tesserae.R")
+source(file.path("src", "tesserae.R"))
 
 # functions
 
@@ -110,9 +110,9 @@ cluster.series <- function(x, k = 5, nreps = 10, cores = NA) {
 
 load.scenes <- function(file, author) {
   cat("Loading benchmark themes from", file, "\n")
-  
+
   auth.start <- match(author, la.verse$auth)
-  
+
   getverses <- Vectorize(function(Start, End) {
     paste(
       unlist(
@@ -126,7 +126,7 @@ load.scenes <- function(file, author) {
       ), collapse = " "
     )
   })
-  
+
   bench <- data.table(read.table(file, sep="\t", header=T, as.is=T, quote="", fill=T))[,.(Loc, Description, Type)]
   bench[, Loc := sub("\\(?(\\d),(\\d+)\\s*-\\s*(\\d+)\\)?", "\\1.\\2-\\1.\\3", Loc)]
   bench[, Loc := sub("\\(?(\\d),(\\d+)\\s*\\)?$", "\\1.\\2-\\1.\\2", Loc)]
@@ -139,13 +139,13 @@ load.scenes <- function(file, author) {
 
 remapClassToRef <- function(class, ref) {
   cmap <- mapClass(a = ref, b = class)
-  
+
   new.class <- class
-  
+
   for (i in names(cmap$bTOa)) {
     new.class[class == i] <- cmap$bTOa[i]
   }
-  
+
   return(unlist(new.class))
 }
 
@@ -172,12 +172,12 @@ dir.create(plot.dir, recursive=T)
 # 1. preprocessing the texts
 
 # load latin corpus
-la.verse <- load.corpus("/vagrant/data/la.index.txt")
+la.verse <- load.corpus(file.path("data","la.index.txt"))
 
 # load latin stemmer
 la.stemmer <- build.stemmer.table(
-  stems.file = "/vagrant/data/tesserae/la.lexicon.csv",
-  resolve = "/vagrant/data/tesserae/la.word.freq"
+  stems.file = file.path("data", "tesserae", "la.lexicon.csv"),
+  resolve = file.path("data", "tesserae", "la.word.freq")
 )
 
 # 2. sampling
@@ -277,7 +277,7 @@ plot(pca.topics$x,
 dev.off()
 
 #
-# 3. Check k-means correlation with authorhsip
+# 3. Check k-means correlation with authorship
 #
 
 #  a) tf-idf
@@ -326,7 +326,7 @@ names(randscores.tfidf.k.orig) <- 2:k.max
 randscores.tfidf.k.orig.nobs <- rep(choose(nreps, 2), k.max - 1)
 
 pdf(file.path(plot.dir, "kmeans-authorship.tfidf.pdf"), height = 6, width = 6)
-boxplot(randscores.tfidf.k.orig, 
+boxplot(randscores.tfidf.k.orig,
   main = paste("TF-IDF:", sample.size, "ll/sample\nk-means stability"),
   xlab = "number of classes",
   ylab = "Adjusted Rand index",
@@ -340,7 +340,7 @@ kmcl.tfidf.k.effective <- apply(kmcl.tfidf.cl, 2, function(cl) {
 })
 
 randscores.tfidf.k.effective <- lapply(sort(unique(kmcl.tfidf.k.effective)), function(k) {
-  combn(which(kmcl.tfidf.k.effective == k), 2, function(i) { 
+  combn(which(kmcl.tfidf.k.effective == k), 2, function(i) {
     adjustedRandIndex(kmcl.tfidf.cl[,i[1]], kmcl.tfidf.cl[, i[2]])
   })
 })
@@ -377,7 +377,7 @@ names(randscores.adjusted.k.orig) <- 2:k.max
 randscores.adjusted.k.orig.nobs <- rep(choose(nreps, 2), k.max - 1)
 
 pdf(file.path(plot.dir, "kmeans-authorship.adjusted.pdf"), height = 6, width = 6)
-boxplot(randscores.adjusted.k.orig, 
+boxplot(randscores.adjusted.k.orig,
   main = paste("TF-IDF adj:", sample.size, "ll/sample\nk-means stability"),
   xlab = "number of classes",
   ylab = "Adjusted Rand index",
@@ -390,7 +390,7 @@ kmcl.adjusted.k.effective <- apply(kmcl.adjusted.cl, 2, function(cl) {
 })
 
 randscores.adjusted.k.effective <- lapply(sort(unique(kmcl.adjusted.k.effective)), function(k) {
-  combn(which(kmcl.adjusted.k.effective == k), 2, function(i) { 
+  combn(which(kmcl.adjusted.k.effective == k), 2, function(i) {
     adjustedRandIndex(kmcl.adjusted.cl[,i[1]], kmcl.adjusted.cl[, i[2]])
   })
 })
@@ -427,7 +427,7 @@ names(randscores.topics.k.orig) <- 2:k.max
 randscores.topics.k.orig.nobs <- rep(choose(nreps, 2), k.max - 1)
 
 pdf(file.path(plot.dir, "kmeans-authorship.topics.pdf"), height = 6, width = 6)
-boxplot(randscores.topics.k.orig, 
+boxplot(randscores.topics.k.orig,
   main = paste("LDA:", ntopics, "topics\nk-means stability"),
   xlab = "number of classes",
   ylab = "Adjusted Rand index",
@@ -440,51 +440,11 @@ kmcl.topics.k.effective <- apply(kmcl.topics.cl, 2, function(cl) {
 })
 
 randscores.topics.k.effective <- lapply(sort(unique(kmcl.topics.k.effective)), function(k) {
-  combn(which(kmcl.topics.k.effective == k), 2, function(i) { 
+  combn(which(kmcl.topics.k.effective == k), 2, function(i) {
     adjustedRandIndex(kmcl.topics.cl[,i[1]], kmcl.topics.cl[, i[2]])
   })
 })
 names(randscores.topics.k.effective) <- sort(unique(kmcl.topics.k.effective))
 
 randscores.topics.k.effective.nobs <- sapply(table(kmcl.topics.k.effective), choose, k = 2)
-
-#######
-
-# topics test
-
-one.lda.per.kmeans <- function(ntopics, nclusters, nreps=10, ncores=NA) {
-
-  inner.function <- function(i) {
-    t0 <- Sys.time()
-    on.exit(
-      cat(
-        paste(" - [", i, "/", nreps, "]"),
-        "...",
-        difftime(Sys.time(), t0, units = "min"),
-        "minutes\n"
-      )
-    )
-    kmeans(slot(LDA(dtm.tf, k = ntopics), "gamma"), nclusters)$cluster
-  }
-
-  cat("Generating", nreps, "reps with", ntopics, "topics and", nclusters, "classes\n")
-
-  if(is.na(ncores)) {
-    return(do.call(cbind, lapply(1:nreps, inner.function)))
-  } else {
-    return(do.call(cbind, mclapply(1:nreps, inner.function, mc.cores = ncores)))
-  } 
-}
-
-output.dir <- "~/ldatest"
-if(! dir.exists(output.dir)) {
-	dir.create(output.dir, recursive=T)
-}
-
-set.seed(11011981)
-
-lapply(2:3, function(nclusters) {
-   output.file <- file.path(output.dir, paste(ntopics, "-", nclusters, ".txt", sep=""))
-	write.table(output.file, one.lda.per.kmeans(ntopics, nclusters, nreps = 15, ncores))
-}
 

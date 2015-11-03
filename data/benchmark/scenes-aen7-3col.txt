@@ -1,0 +1,40 @@
+Loc	Description	Type
+7,1-4	Apostrophe to Caieta	
+7,5-24	Departure and voyage (Circe's land)	Voyage
+7,25-36	The winds stop blowing ;  arrival to the mouth of the Tiber	Voyage
+7,37-45	Invocation to the Muse	Invocation
+7,45-80	Political situation in Latium;  omens of war	Prophecy
+7,81-106	Prophecy of Faunus	Prophecy
+7,107-134	Meal (fulfilled prophecy)	Sacrifice::Feast::Prophecy
+7,135-147	Prayer of Aeneas and sacrifice	Sacrifice::Feast
+7,148-169	Ambassy to the king	Embassy
+7,170-191	The king's palace (description)	Embassy
+7,192-211	Latinus' speech	Embassy
+7,212-248	Ilionaeus' answer	Embassy
+7,249-285	Latinus' answer; the Trojans come back to their camp	Embassy
+7,286-322	Divine intervention of Juno (speech)	Divine intervention
+7,323-340	Juno calls to Allecto for help (in order to provoke war)	Divine intervention
+7,341-372	Allecto infect the soul of Amata; Amata's words to Latinus	Divine intervention
+7,373-405	Amata seized with Bacchic fury	Divine intervention
+7,406-434	Allecto in old lady's clothes pushes Turnus to battle	Divine intervention
+7,435-444	Sardonic answer of Turnus	Divine intervention
+7,445-474	Wrath of Allecto, speech: Turnus seizeid with furor bellicus	Divine intervention
+7,475-510	Allecto among the Trojans; Iulus kills the deer of Tyrrus'children	Divine intervention
+7,511-539	First battle among Trojans and Italic population	Battle::Divine intervention
+7,540-571	Allecto tells to Juno the consequences of her intervention; answer of Juno; Allecto goes to the Underworld	Divine intervention
+7,572-600	Fury of Turnus and of his allies against Latinus ; words of Turnus and Latinus	
+7,601-640	The doors of the war (description of the habit); Juno opens them; war preparations amongst Italic peoples	
+7,641-645	Invocations to the Muses	Invocation
+7,646-654	Catalogue: Mezentius and his son  Lausus	Catalogue
+7,655-669	Catalogue: Aventinus and his men	Catalogue
+7,670-677	Catalogue: Catillus and Coras	Catalogue
+7,678-690	Catalogue: Caeculus with  fighters from the countryside	Catalogue
+7,691-705	Catalogue: Messapus with Fescennians and Aequi Falisci	Catalogue
+7,706-722	Catalogue: the Sabinian Clausus and several italic peoples	Catalogue
+7,723-732	Catalogue: Halesus and several italic peoples	Catalogue
+7,733-743	Catalogue: Oebalus	Catalogue
+7,744-749	Catalogue: Ufens	Catalogue
+7,750-760	Catalogue: the priest Umbro	Catalogue
+7,761-782	Catalogue: Virbius from Aricia	Catalogue
+7,783-802	Catalogue: Turnus and his troops: description of Turnus' armour	Catalogue
+7,803-817	Catalogue: Camilla with the Volsci	Catalogue

@@ -10,7 +10,7 @@ apt-get install -y \
   libxml2-dev \
   libgsl0-dev
 
-# set up R
+# install R
 
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
 
@@ -19,5 +19,7 @@ echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/" >> /etc/apt/sources.
 apt-get update
 apt-get install -y r-base-dev
 
-R --vanilla < /vagrant/vagrant/install.R
+# install R packages
+
+Rscript --vanilla /vagrant/vagrant/install.R
 
